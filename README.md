@@ -1,4 +1,4 @@
-# Brunch app
+# Procademy
 
 This is an opinionated AngularJS skeleton for [Brunch](http://brunch.io).  The AngularJS style guide is based upon [John Papa's guide](https://github.com/johnpapa/angular-styleguide).
 
