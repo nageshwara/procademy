@@ -11,6 +11,7 @@
     "start": "brunch watch --server",
     "test": "karma start ./karma.config.js",
     "prod": "brunch build --production",
+    "prestart": "npm install && test -h app/assets/videogular-themes-default || ln -s ../../bower_components/videogular-themes-default app/assets/",
     "postinstall": "bower install"
   },
   "dependencies": {},

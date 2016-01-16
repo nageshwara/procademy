@@ -11,11 +11,20 @@
   ],
   "dependencies": {
     "angular": "~1.4.3",
-    "angular-material": "~0.10.0",
+    "angular-material": "~1.0.2",
     "ui-router": "~0.2.15",
-    "angular-resource": "~1.4.3"
+    "angular-resource": "~1.4.3",
+    "videogular": "~1.4.0",
+    "videogular-themes-default": "~1.4.0",
+    "videogular-controls": "~1.4.0",
+    "skulpt": "~0.10.1",
+    "angular-ui-codemirror": "~0.3.0",
+    "codemirror-repl": "aaditmshah/codemirror-repl#34ca29f40e15b0beeb8142734f5654ab6c68b24f"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.4"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
   }
 }

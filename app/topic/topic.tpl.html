@@ -1,0 +1,62 @@
+<div layout="row" layout-sm="column" layout-align="center start">
+  <md-card>
+    <h3 class="md-headline">{{topicCtrl.topic.title}}</h3>  
+    <md-card-content>
+      <p>{{topicCtrl.topic.notes}}</p>
+      <div class="videogular-container">
+      	<videogular vg-theme="topicCtrl.playerConfig.theme" vg-auto-play="topicCtrl.playerConfig.autoPlay">
+      		<vg-media vg-src="topicCtrl.topic.videoSources" vg-tracks="topicCtrl.topic.videoTracks">
+      		</vg-media>
+            <vg-controls vg-autohide="topicCtrl.playerConfig.plugins.controls.autoHide" 
+            vg-autohide-time="topicCtrl.playerConfig.plugins.controls.autoHideTime">
+              <vg-play-pause-button></vg-play-pause-button>
+              <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+              <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+              </vg-scrub-bar>
+              <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+              <vg-volume>
+                <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
+              </vg-volume>
+              <vg-playback-button></vg-playback-button>
+              <vg-fullscreen-button></vg-fullscreen-button>
+            </vg-controls>
+
+            <vg-overlay-play></vg-overlay-play>
+            <vg-poster vg-url='topicCtrl.playerConfig.plugins.poster'></vg-poster>    
+      	</videogular>
+      </div>      
+    </md-card-content>
+    <md-card-actions class="inset" layout="row" layout-align="end center">
+      <md-button ng-show="topicCtrl.prevTopic != null" ng-click="$state.go('topic', { id: topicCtrl.prevTopic.id })" 
+      class="md-raised">{{topicCtrl.prevTopic.title}}</md-button>
+      <div flex></div>
+      <md-button ng-show="topicCtrl.nextTopic != null" ng-click="$state.go('topic', { id: topicCtrl.nextTopic.id })" 
+      class="md-raised">{{topicCtrl.nextTopic.title}}</md-button>
+      <md-button ng-show="topicCtrl.nextTopic == null" ng-click="$state.go('finish')" 
+      class="md-raised">Finish</md-button>    
+    </md-card-actions>  
+  </md-card>
+  <md-card>
+    <div layout="row" class="editormenu">
+      <h3 class="md-headline">Playground</h3>
+      <md-button ng-click="topicCtrl.runCode()" class="md-mini">Run</md-button>
+    </div>
+    <md-card-content>
+        <div layout="column" flex>
+          <ui-codemirror
+          ui-codemirror-opts="topicCtrl.code.editorOpts" ng-model="topicCtrl.code.input">
+          </ui-codemirror>
+          <div layout="column" flex class="codeOutput">
+            <div class="label">Output:</div>
+            <md-whiteframe class="md-whiteframe-1dp" flex
+            layout-fill layout="row" layout-align="center start">
+              <pre flex="50">{{topicCtrl.code.output}}</pre>
+              <div id="mycanvas" flex="50"></div> 
+            </md-whiteframe>
+          </div>
+        </div>
+      </md-card-content>
+  </md-card>
+</div>

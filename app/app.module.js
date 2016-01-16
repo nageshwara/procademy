@@ -5,8 +5,11 @@
     'ngMaterial',
     'templates',
     'app.home',
-    'app.posts',
-    'app.post'
+    'app.topic',
+    'ngSanitize',
+    'com.2fdevs.videogular',
+    'com.2fdevs.videogular.plugins.controls',
+    'ui.codemirror'
   ];
    
   angular.module('app', dependencies)
@@ -20,8 +23,8 @@
     $urlRouterProvider.otherwise('/');
     
     $mdThemingProvider.theme('default')
-    .primaryPalette('green')
-    .accentPalette('light-green');
+    .primaryPalette('light-blue')
+    .accentPalette('purple');
   }
   
   function run ($rootScope, $state, $stateParams) {

@@ -1,0 +1,42 @@
+md-content.topic {
+  md-card {  
+  	width: 900px;
+    height: 525px;
+    .md-headline {
+      height: 24px;
+      line-height: 24px;
+      margin: 8px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  	.videogular-container {
+  		width: 500px;
+  		height: 375px;
+  		margin: auto;
+  		overflow: hidden;
+  	}	  
+
+    .editormenu {
+      margin-bottom: 4px;
+      .md-button {
+        margin: 0px;
+      }
+    }
+
+    md-card-content {
+      padding: 2px;
+      .codeOutput {
+        margin: 6px;
+        min-height: 160px;
+        md-whiteframe {
+          margin-top: 6px;
+          pre {
+            height: 100%;
+            margin: 4px;
+          }
+        }
+      }
+    }
+  }
+}
